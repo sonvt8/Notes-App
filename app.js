@@ -9,7 +9,14 @@ yargs.version('1.1.0')
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
-    handler: () => console.log('Adding a new note!')
+    builder: {
+        title:{
+            describe: 'Note title',
+            demandOption : true, // Ensure title must be included in the command
+            type: 'string'
+        }
+    },
+    handler: (argv) => console.log('Title:', argv.title)
 })
 
 // Create "Remove" command
@@ -45,12 +52,7 @@ yargs.command({
     { _: [ 'read' ], '$0': 'app' }
 */
 
-console.log(yargs.argv)
-// return: { _: [], '$0': 'app' }
-
-/*
-    For showing help, we use --help to see command funct. Ex: node app --help
-*/
+yargs.parse()
 
 
 
