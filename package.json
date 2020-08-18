@@ -1,0 +1,24 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Learning from Udemy",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonvt8/Notes-App.git"
+  },
+  "author": "sonvt8 (Instructor: Andrew)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sonvt8/Notes-App/issues"
+  },
+  "homepage": "https://github.com/sonvt8/Notes-App#readme"
+}
