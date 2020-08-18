@@ -14,9 +14,17 @@ yargs.command({
             describe: 'Note title',
             demandOption : true, // Ensure title must be included in the command
             type: 'string'
+        },
+        body:{
+            describe: ' body Content',
+            demandOption : true, // Ensure title must be included in the command
+            type: 'string'
         }
     },
-    handler: (argv) => console.log('Title:', argv.title)
+    handler: (argv) => {
+        console.log('Title:', argv.title)
+        console.log('Body:', argv.body)
+    }
 })
 
 // Create "Remove" command
