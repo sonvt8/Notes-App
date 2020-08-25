@@ -11,7 +11,7 @@ const addNotes = (title, body) => {
         return note.title === title
     })
 
-    if(!duplicate.length){
+    if(duplicate.length === 0){
         notes.push({
             title : title,
             body : body
