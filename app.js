@@ -1,5 +1,6 @@
 const yargs = require('yargs')
 const notes = require('./notes.js')
+const chalk = require('chalk')
 
 // Customize yargs version
 yargs.version('1.1.0')
@@ -41,14 +42,8 @@ yargs.command({
 yargs.command({
     command: 'list',
     describe: 'List some notes',
-    handler: () => console.log('Listing out all notes!')
+    handler: () => notes.listNotes()
 })
-/*
-    Command: node app list
-    Return:
-    Listing out all notes!
-    { _: [ 'list' ], '$0': 'app' }
-*/
 
 // Create "Read" command
 yargs.command({
