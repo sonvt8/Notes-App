@@ -21,7 +21,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: (argv) => notes.addNotes(argv.title, argv.body)
+    handler: (argv) => notes.addNote(argv.title, argv.body)
 })
 
 // Create "Remove" command
@@ -35,7 +35,7 @@ yargs.command({
             type : 'string'
         }
     },
-    handler: (argv) => notes.removeNotes(argv.title)
+    handler: (argv) => notes.removeNote(argv.title)
 })
 
 // Create "List" command
@@ -49,14 +49,15 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read a note',
-    handler: () => console.log('Reading a note!')
+    builder: {
+        title:{
+            describe : 'Note read',
+            demandOption : true,
+            type : 'string'
+        }
+    },
+    handler: (argv) => notes.readNote(argv.title)
 })
-/*
-    Command: node app read
-    Return:
-    Reading a note!
-    { _: [ 'read' ], '$0': 'app' }
-*/
 
 yargs.parse()
 
